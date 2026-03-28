@@ -1,7 +1,14 @@
 import './style.css';
-import { BlockEditor } from './index';
-import { ColumnBlock, RowBlock } from './blocks';
-import { TextBlock, ImageBlock, VideoBlock, CodeBlock, TableBlock } from './blocks';
+import {
+  BlockEditor,
+  TextBlock,
+  ImageBlock,
+  VideoBlock,
+  CodeBlock,
+  TableBlock,
+  RowBlock,
+  ColumnBlock,
+} from '@block-editor/core';
 
 const editor = new BlockEditor('#app');
 
@@ -40,8 +47,8 @@ editor.on('editor:change', () => {
   console.log('Editor changed');
 });
 
-editor.on('block:select', (blockId) => {
-  console.log('Block selected:', blockId);
+editor.on('block:select', (data?: unknown) => {
+  console.log('Block selected:', data);
 });
 
 editor.render();

@@ -2,7 +2,25 @@
 
 ## Project Overview
 
-This is a block-based editor built with pure TypeScript and Vite. The architecture uses a modular block system with drag-and-drop reordering, rich text editing, and undo/redo functionality.
+This is a block-based editor built with pure TypeScript and Vite using pnpm workspace. The architecture uses a modular block system with drag-and-drop reordering, rich text editing, and undo/redo functionality.
+
+## Project Structure
+
+```
+block-editor/               # Root workspace
+├── packages/
+│   ├── block-core/        # Core editor logic and blocks
+│   │   ├── src/
+│   │   │   ├── block.ts
+│   │   │   ├── events.ts
+│   │   │   ├── history.ts
+│   │   │   ├── index.ts
+│   │   │   └── blocks/
+│   │   └── __tests__/    # Unit tests
+│   └── block-demo/       # Demo application
+│       └── src/
+└── vitest.config.ts
+```
 
 ---
 
@@ -11,36 +29,28 @@ This is a block-based editor built with pure TypeScript and Vite. The architectu
 ### Development
 
 ```bash
-npm run dev      # Start Vite dev server with hot reload
+pnpm dev      # Start Vite dev server
 ```
 
 ### Build
 
 ```bash
-npm run build    # Run TypeScript type checking + Vite build
-npm run preview  # Preview production build locally
+pnpm build    # Build all packages
 ```
 
 ### Formatting
 
 ```bash
-npm run format   # Format all files with Prettier
-```
-
-### Type Checking
-
-```bash
-npx tsc --noEmit  # Run TypeScript compiler for type checking only
+pnpm format   # Format all files with Prettier
 ```
 
 ### Testing
 
-This project uses Vitest for testing. Test files are located in `tests/`.
+This project uses Vitest for testing. Test files are located in `packages/block-core/__tests__/`.
 
 ```bash
-npm run test           # Run all tests in watch mode
-npm run test:run       # Run all tests once
-npm run test:run tests/blocks.test.ts  # Run single test file
+pnpm test           # Run all tests in watch mode
+pnpm test:run       # Run all tests once
 ```
 
 ---

@@ -1,7 +1,6 @@
 import type { Block } from './block';
 import { EventEmitter, type EditorEventType } from './events';
 import { History } from './history';
-import './index.css';
 
 export interface BlockEditorConfig {
   maxHistorySize?: number;
@@ -325,3 +324,16 @@ export class BlockEditor extends EventEmitter {
 
 export { EventEmitter };
 export type { EditorEventType };
+export {
+  TextBlock,
+  ImageBlock,
+  VideoBlock,
+  CodeBlock,
+  TableBlock,
+  RowBlock,
+  ColumnBlock,
+} from './blocks';
+export type { ImageContent } from './blocks/Image';
+export type { VideoContent } from './blocks/Video';
+export type { CodeContent } from './blocks/Code';
+export type { TableContent } from './blocks/Table';
