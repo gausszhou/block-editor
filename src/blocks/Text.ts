@@ -1,20 +1,26 @@
-import { BaseBlock } from "../block";
+import { BaseBlock, type BlockType } from '../block';
 
 export class TextBlock extends BaseBlock {
-    type: string = 'text';
+  type: BlockType = 'text';
 
-    private formatStyles(): string {
-        return Object.entries(this.styles)
-            .map(([key, value]) => `${key}:${value}`)
-            .join(';');
-    }
+  constructor(content: string = '', styles: Record<string, string> = {}) {
+    super(content, styles);
+  }
 
-    render(){
-        const element = document.createElement('span');
-        element.dataset.type = 'text';
-        element.classList.add('block');
-        element.style.cssText = this.formatStyles();
-        element.innerHTML = this.content;
-        return element
-    }
+  render(): HTMLElement {
+    const element = document.createElement('span');
+    element.dataset.type = 'text';
+    element.dataset.id = this.id;
+    element.classList.add('block', 'block-text');
+    element.contentEditable = 'true';
+    element.style.cssText = this.formatStyles();
+    element.textContent = this.content as string;
+    return element;
+  }
+
+  private formatStyles(): string {
+    return Object.entries(this.styles)
+      .map(([key, value]) => `${key}:${value}`)
+      .join(';');
+  }
 }
