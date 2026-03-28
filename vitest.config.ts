@@ -9,12 +9,16 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'happy-dom',
-    include: ['tests/**/*.test.ts', 'tests/**/*.spec.ts'],
+    include: [
+      'packages/block-core/__tests__/**/*.test.ts',
+      'packages/block-core/__tests__/**/*.spec.ts',
+    ],
     pool: 'forks',
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src'),
+      '@': resolve(__dirname, './packages/block-core/src'),
+      '@block-editor/core': resolve(__dirname, './packages/block-core/src'),
     },
   },
 });

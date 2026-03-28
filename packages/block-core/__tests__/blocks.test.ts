@@ -1,11 +1,14 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { TextBlock } from '@/blocks/Text';
-import { ImageBlock, type ImageContent } from '@/blocks/Image';
-import { VideoBlock, type VideoContent } from '@/blocks/Video';
-import { CodeBlock, type CodeContent } from '@/blocks/Code';
-import { TableBlock, type TableContent } from '@/blocks/Table';
-import { RowBlock } from '@/blocks/Row';
-import { ColumnBlock } from '@/blocks/Column';
+import {
+  TextBlock,
+  ImageBlock,
+  VideoBlock,
+  CodeBlock,
+  TableBlock,
+  RowBlock,
+  ColumnBlock,
+} from '../src/blocks';
+import type { ImageContent, VideoContent, CodeContent, TableContent } from '../src/blocks';
 
 describe('TextBlock', () => {
   let textBlock: TextBlock;

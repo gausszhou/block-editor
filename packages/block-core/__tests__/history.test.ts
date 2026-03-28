@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { History, type EditorState } from '@/history';
-import { TextBlock } from '@/blocks/Text';
+import { History } from '../src/history';
+import { TextBlock } from '../src/blocks';
+import type { EditorState } from '../src/history';
 
 describe('History', () => {
   let history: History;
