@@ -13,6 +13,7 @@ export class TextBlock extends BaseBlock {
     element.dataset.id = this.id;
     element.classList.add('block', 'block-text');
     element.contentEditable = 'true';
+    element.draggable = true;
     element.style.cssText = this.formatStyles();
     element.textContent = this.content as string;
     return element;

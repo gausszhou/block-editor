@@ -7,7 +7,7 @@ const editor = new BlockEditor('#app');
 
 const textBlock = new TextBlock('Hello, World!', { fontSize: '18px', color: '#333' });
 const imageBlock = new ImageBlock({
-  src: 'https://via.placeholder.com/400x200',
+  src: 'https://placehold.co/400x200',
   alt: 'Placeholder',
   caption: 'Sample image',
 });

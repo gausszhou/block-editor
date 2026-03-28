@@ -35,15 +35,12 @@ npx tsc --noEmit  # Run TypeScript compiler for type checking only
 
 ### Testing
 
-> **Note:** This project currently has no test framework configured. When adding tests, use Vitest as it's the recommended test runner for Vite projects.
-
-To add tests in the future:
+This project uses Vitest for testing. Test files are located in `tests/`.
 
 ```bash
-npm install -D vitest
-npm run test           # Run all tests
-npm run test -- <file> # Run single test file
-npm run test -- --watch # Run tests in watch mode
+npm run test           # Run all tests in watch mode
+npm run test:run       # Run all tests once
+npm run test:run tests/blocks.test.ts  # Run single test file
 ```
 
 ---
